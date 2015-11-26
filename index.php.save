@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<?php
+include "include.php"; ?> 
+<head></head>
+<body>
+<div style="font-family: 'Poiret One', cursive; font-size: 2em;"><div align="center">Jay-Fish - The Opensource Aquarium Project &copy;</div></div>
+<div align="center"><img src="images/jellyhot.png" width="150px"></div> 
+<?php
+	$query="SELECT * FROM $tbl_stat";
+	$result = mysqli_query($con,$query) or die (mysqli_error($con));
+	while($rows = mysqli_fetch_array($result)) {
+		$schedule = $rows['schedule'];
+		$daylight = $rows['daylight'];
+		$actinic = $rows['actinic'];
+		$moon = $rows['moon'];
+		$sump = $rows['sump'];
+		$therm = $rows['therm'];
+		$thermii = $rows['thermii'];
+		}
+		if ($schedule == "on") {$schedule = "checked";} else {$schedule = "";}
+		if ($daylight == "on") {$daylight = "checked";} else {$d"";}
+		if ($actinic == "on") {$actinic = "checked";} else {$actinic = "";}
+		if ($moon == "on") {$moon = "checked";} else {$moon = "";}
+		if ($sump == "on") {$sump = "checked";} else {$sump = "";}
+
+?>
+
+<div align="center" style="font-size:5px;">
+
+	<style type="text/css">
+	th { font-size: 10px;
+		text-align: center;}</style>
+
+<form action="submit.php" method="post">
+
+<!--#1E1E20-->
+
+<!--<table style="background-color: #1E1E20;" border="0" width="300">-->
+<table border="0" width="350">
+<th></th><th></th><th></th><th></th><th>
+
+<table><td><button class="btn btn-danger" type="submit"
+style="padding: 0px;width:70px;height:20px;">Set</button></td></table>
+
+</th><tr>
+<th style="border:0px;">SCHED</th><th style="border:0px;">DAY</th><th style="border:0px;">ACTINIC</th><th style="border:0px;">MOON</th><th style="border:0px;">SUMP</th><tr>
+<td style="text-align: center;
+		height: 30px;
+		width:100px;
+		padding: 3px;">
+
+
+<span class="switch">
+	<span class="switch-border1">
+		<span class="switch-border2">
+			
+			<!-- INPUT -->
+			<input id="switch1" type="checkbox" name="schedule" <?php print $schedule;?> />
+			<!-- INPUT -->
+			
+			<label for="switch1"></label>
+			<span class="switch-top"></span>
+			<span class="switch-shadow"></span>
+			<span class="switch-handle"></span>
+			<span class="switch-handle-left"></span>
+			<span class="switch-handle-right"></span>
+			<span class="switch-handle-top"></span>
+			<span class="switch-handle-bottom"></span>
+			<span class="switch-handle-base"></span>
+			<span class="switch-led switch-led-green">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="switch-led switch-led-red">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+</td>
+
+<td style="text-align: center;
+		height: 30px;
+		width:100px;
+		padding: 3px;">
+
+<span class="switch">
+	<span class="switch-border1">
+		<span class="switch-border2">
+			
+			<!-- INPUT -->
+			<input id="switch2" type="checkbox" name="daylight" <?php print $daylight;?> />
+			<!-- INPUT -->
+			
+			<label for="switch2"></label>
+			<span class="switch-top"></span>
+			<span class="switch-shadow"></span>
+			<span class="switch-handle"></span>
+			<span class="switch-handle-left"></span>
+			<span class="switch-handle-right"></span>
+			<span class="switch-handle-top"></span>
+			<span class="switch-handle-bottom"></span>
+			<span class="switch-handle-base"></span>
+			<span class="switch-led switch-led-green">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="switch-led switch-led-red">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+</td>
+
+<td style="text-align: center;
+		height: 30px;
+		width:100px;
+		padding: 3px;">
+
+
+<span class="switch">
+	<span class="switch-border1">
+		<span class="switch-border2">
+			
+			<!-- INPUT -->
+			<input id="switch3" type="checkbox" name="actinic" <?php print $actinic;?> />
+			<!-- INPUT -->
+			
+			<label for="switch3"></label>
+			<span class="switch-top"></span>
+			<span class="switch-shadow"></span>
+			<span class="switch-handle"></span>
+			<span class="switch-handle-left"></span>
+			<span class="switch-handle-right"></span>
+			<span class="switch-handle-top"></span>
+			<span class="switch-handle-bottom"></span>
+			<span class="switch-handle-base"></span>
+			<span class="switch-led switch-led-green">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="switch-led switch-led-red">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+</td>
+
+
+<td style="text-align: center;
+		height: 30px;
+		width:100px;
+		padding: 3px;">
+
+<span class="switch">
+	<span class="switch-border1">
+		<span class="switch-border2">
+			
+			<!-- INPUT -->
+			<input id="switch4" type="checkbox" name="moon" <?php print $moon;?> />
+			<!-- INPUT -->
+			
+			<label for="switch4"></label>
+			<span class="switch-top"></span>
+			<span class="switch-shadow"></span>
+			<span class="switch-handle"></span>
+			<span class="switch-handle-left"></span>
+			<span class="switch-handle-right"></span>
+			<span class="switch-handle-top"></span>
+			<span class="switch-handle-bottom"></span>
+			<span class="switch-handle-base"></span>
+			<span class="switch-led switch-led-green">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="switch-led switch-led-red">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+</td>
+
+<td style="text-align: center;
+		height: 30px;
+		width:100px;
+		padding: 3px;">
+
+<span class="switch">
+	<span class="switch-border1">
+		<span class="switch-border2">
+			
+			<!-- INPUT -->
+			<input id="switch5" type="checkbox" name="sump" <?php print $sump;?> />
+			<!-- INPUT -->
+			
+			<label for="switch5"></label>
+			<span class="switch-top"></span>
+			<span class="switch-shadow"></span>
+			<span class="switch-handle"></span>
+			<span class="switch-handle-left"></span>
+			<span class="switch-handle-right"></span>
+			<span class="switch-handle-top"></span>
+			<span class="switch-handle-bottom"></span>
+			<span class="switch-handle-base"></span>
+			<span class="switch-led switch-led-green">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+			<span class="switch-led switch-led-red">
+				<span class="switch-led-border">
+					<span class="switch-led-light">
+						<span class="switch-led-glow"></span>
+					</span>
+				</span>
+			</span>
+		</span>
+	</span>
+</span>
+</td>
+</table>
+</form>
+
+</html>

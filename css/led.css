@@ -1,0 +1,17 @@
+.led-on {
+    margin-left: auto;
+    width: 20px;
+    height: 5px;
+    background-color: #FF0000;
+    border-radius: 50%;
+    box-shadow: #FF0000 0 -1px 7px 1px, inset #FF0000 0 -1px 9px, #FF0000 0 2px 12px;
+}
+
+.led-off {
+    margin: 20px auto;
+    width: 20px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+    box-shadow: #000 0 -1px 7px 1px, inset #000 0 -1px 9px, #000 0 2px 12px;
+}

@@ -1,0 +1,10 @@
+2015-11-22 18:10:02.657911
+-----FROM DB---
+28-00000514424c
+28-0000053cfcb7
+---------------
+Fail To Read tfile - Temperature Sensor 1
+Failed to ready tiifile - Temperature Sensor 2
+47.6
+0
+0
